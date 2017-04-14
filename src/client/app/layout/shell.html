@@ -3,8 +3,10 @@
     <ht-top-nav navline="vm.navline"></ht-top-nav>
   </header>
   <section id="content" class="content">
+    <!--Remove to hide sidebar, doesnt remove content-->
     <div ng-include="'app/layout/sidebar.html'"></div>
 
+    <!--Actual content of page, displays based on route-->
     <div ui-view class="shuffle-animation"></div>
 
     <div ngplus-overlay ngplus-overlay-delay-in="50" ngplus-overlay-delay-out="700" ngplus-overlay-animation="dissolve-animation">
