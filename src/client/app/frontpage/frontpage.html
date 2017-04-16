@@ -2,15 +2,37 @@
   <section class="matter">
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 jumbotron">
           <h1>Welcome back Max!</h1>
           <h4>Here is the overview information for you wine room</h4>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-6">
-          <h4>Recently opened bottles</h4>
-          <div ui-grid="vm.gridOptions" class="standard-grid"></div>
+        <div class="col-md-6 col-xs-12">
+          <h4><b>Recently opened bottles
+              <i class="fa fa-question-circle" data-animation="am-flip-x"
+                 bs-tooltip="{ title: 'This is a list of your recently opened bottles,
+                 click the grey box to rate and comment on the bottle,
+                 or click the red button to see all the information we have on the bottle' }">
+              </i>
+          </b></h4>
+          <div ui-grid="vm.recentlyOpenedGridOptions" class="standard-grid"></div>
+        </div>
+        <div class="col-md-3 col-xs-6">
+          <h4><b>Entering peak drinking age
+            <i class="fa fa-question-circle" data-animation="am-flip-x"
+               bs-tooltip="{ title: 'This is a list of bottles in your collection that have recently entered their peak drinking time frame' }">
+            </i>
+          </b></h4>
+          <div ui-grid="vm.enteringGridOptions" class="standard-grid"></div>
+        </div>
+        <div class="col-md-3 col-xs-6">
+          <h4><b>Leaving peak drinking age
+            <i class="fa fa-question-circle" data-animation="am-flip-x"
+               bs-tooltip="{ title: 'This is a list of bottles in your collection that may expire soon' }">
+            </i>
+          </b></h4>
+          <div ui-grid="vm.leavingGridOptions" class="standard-grid"></div>
         </div>
       </div>
     </div>

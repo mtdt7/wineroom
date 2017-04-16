@@ -65,7 +65,7 @@
 
     vm.recentlyOpened = _.sortBy(vm.recentlyOpened, ['opened']);
 
-    vm.gridOptions = {
+    vm.recentlyOpenedGridOptions = {
       data: vm.recentlyOpened,
       rowHeight: 40,
       columnDefs: [
@@ -73,8 +73,33 @@
         { field: 'wine', displayName: 'Wine, Producer', width: '*' },
         { field: 'year', displayName: 'Year', width: '10%' },
         { field: 'format', displayName: 'Bottle Format', width: '20%' },
-        { field: 'options', displayName: '', width: '10%', enableSorting: false, cellClass: 'textCenter',
-          cellTemplate: '<button type="button" class="btn btn-sm btn-primary btn-table" ng-click="grid.appScope.vm.showModal(row)"><i class="fa fa-pencil-square-o"></i></button>' }
+        { field: 'options', displayName: '', width: '15%', enableSorting: false, cellClass: 'textCenter',
+          cellTemplate: '<button type="button" class="btn btn-sm btn-default btn-table" ng-click="grid.appScope.vm.showModal(row)">' +
+                            '<i class="fa fa-pencil-square-o"></i></button>' +
+                        '<a ui-sref="admin"><button type="button" class="btn btn-sm btn-primary btn-table">' +
+                            '<i class="fa fa-info-circle"></i></button></a>' }
+      ]
+    };
+    vm.enteringGridOptions = {
+      data: vm.recentlyOpened,
+      rowHeight: 40,
+      columnDefs: [
+        { field: 'wine', displayName: 'Wine, Producer', width: '*' },
+        { field: 'year', displayName: 'Year', width: '20%' },
+        { field: 'options', displayName: '', width: '15%', enableSorting: false, cellClass: 'textCenter',
+          cellTemplate: '<a ui-sref="admin"><button type="button" class="btn btn-sm btn-primary btn-table">' +
+                          '<i class="fa fa-info-circle"></i></button></a>' }
+      ]
+    };
+    vm.leavingGridOptions = {
+      data: vm.recentlyOpened,
+      rowHeight: 40,
+      columnDefs: [
+        { field: 'wine', displayName: 'Wine, Producer', width: '*' },
+        { field: 'year', displayName: 'Year', width: '20%' },
+        { field: 'options', displayName: '', width: '15%', enableSorting: false, cellClass: 'textCenter',
+          cellTemplate: '<a ui-sref="admin"><button type="button" class="btn btn-sm btn-primary btn-table">' +
+          '<i class="fa fa-info-circle"></i></button></a>' }
       ]
     };
 

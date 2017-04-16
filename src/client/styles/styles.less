@@ -5,6 +5,13 @@
 @color_important: #fa3031;
 @color_violet: #932ab6;
 
+@color_tan : #C09f80;
+@color_lighttan: #e4d6c8;
+@color_darktan: #a1764f;
+@color_wine: #76323f;
+@color_charcoal: #565656;
+@color_grain: #D7CEC7;
+
 * {
     /*-webkit-box-shadow: none !important;
     -ms-box-shadow: none !important;
@@ -76,8 +83,8 @@ input[type="radio"], input[type="checkbox"] {
 body {
     font-size: 13px;
     line-height: 23px;
-    color: #666;
-    background: #111;
+    color: #565656;
+    background: #D7CEC7 !important;
     padding-top: 45px;
     -webkit-font-smoothing: antialiased;
 }
@@ -91,7 +98,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     padding: 2px 0;
     margin: 2px 0;
-    color: #777;
+    color: #565656;
     font-weight: 400;
 }
 
@@ -198,19 +205,21 @@ a.btn {
 /* Button colors */
 
 .btn.btn-primary {
-    background: @color_blue !important;
+    background: @color_wine !important;
+    border-color: #592630;
 }
 
     .btn.btn-primary:hover {
-        background: #0f608b !important;
+        background: #592630 !important;
     }
 
 .btn.btn-info {
-    background: @color_lightblue !important;
+    background: @color_tan !important;
+    border-color: @color_darktan;
 }
 
     .btn.btn-info:hover {
-        background: #459fc9 !important;
+        background: @color_darktan !important;
     }
 
 .btn.btn-success {
@@ -237,6 +246,14 @@ a.btn {
         background: #d82829 !important;
     }
 
+.btn.btn-default {
+  background: @color_charcoal !important;
+  color: white;
+}
+
+    .btn.btn-default:hover {
+      background: #2e2e2e !important;
+    }
 /* Label colors */
 
 .label.label-success,
@@ -794,7 +811,7 @@ form {
     margin-left: 230px;
     margin-right: 0;
     width: auto;
-    background: #fff;
+    background: #D7CEC7;
     min-height: 900px;
 }
 
@@ -2029,4 +2046,13 @@ tags-input.form-control .host{
 .input-group-btn button{
   margin-left: 0;
   width: 100%;
+}
+
+.ui-grid-header-cell {
+  background: @color_wine;
+  color: white;
+}
+
+.rzslider .rz-pointer {
+  background: @color_tan;
 }
