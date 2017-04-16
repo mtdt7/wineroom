@@ -1,0 +1,62 @@
+<div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" ng-show="title">
+        <button type="button" class="close" ng-click="$hide()">&times;</button>
+        <h4 class="modal-title" ng-bind-html="title"></h4>
+      </div>
+      <div class="modal-body commentModal">
+        <div class="row">
+          <div class="col-md-12 questionBox">
+            <!--{{vm.currentRow.entity}}-->
+            <p>You recently drank a {{vm.currentRow.entity.year}} {{vm.currentRow.entity.wine}} on {{vm.currentRow.entity.opened}}. What did you think?</p>
+          </div>
+          <div class="col-md-12 paddingTop">
+            <rzslider
+              rz-slider-model="vm.slider.value"
+              rz-slider-options="vm.slider.options"></rzslider>
+          </div>
+          <div class="col-md-12 paddingTop">
+            <div class="col-md-6">
+              <div class="input-group">
+                <span class="input-group-btn" id="basic-addon1">
+                  <button class="btn btn-info" type="button" data-trigger="click" data-type="success" data-title="What buzz words would you use to describe the wine?" bs-tooltip>
+                    <i class="fa fa-tag"></i>
+                  </button>
+                </span>
+                <tags-input ng-model="vm.comment.tags" class="form-control" aria-describedby="basic-addon1"></tags-input>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="input-group">
+                <span class="input-group-btn" id="basic-addon2">
+                  <button class="btn btn-info" type="button" data-trigger="click" data-type="success" data-title="Who did you drink this bottle with?" bs-tooltip>
+                    <i class="fa fa-users"></i>
+                  </button>
+                </span>
+                <tags-input ng-model="vm.comment.people" data-placeholder="Add a person" class="form-control" aria-describedby="basic-addon2"></tags-input>
+              </div>
+            </div>
+            <div class="col-md-12 paddingTop">
+              <div class="input-group">
+                <span class="input-group-btn" id="basic-addon3">
+                  <button class="btn btn-info" type="button" data-trigger="click" data-type="success" data-title="Where did you drink this bottle?" bs-tooltip>
+                    <i class="fa fa-map-marker"></i>
+                  </button>
+                </span>
+                <input type="text" placeholder="Address or Location..." g-places-autocomplete ng-model="vm.comment.location" class="form-control" aria-describedby="basic-addon3"/>
+              </div>
+            </div>
+            <div class="col-md-12 paddingTop paddingBottom">
+              <textarea class="form-control" placeholder="Other comments and notes..." rows="5" id="comment"></textarea>
+            </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="$hide()">Close</button>
+        <button type="button" class="btn btn-primary" ng-click="$hide()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
