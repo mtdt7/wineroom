@@ -74,7 +74,8 @@
         { field: 'year', displayName: 'Year', width: '10%' },
         { field: 'format', displayName: 'Bottle Format', width: '20%' },
         { field: 'options', displayName: '', width: '15%', enableSorting: false, cellClass: 'textCenter',
-          cellTemplate: '<button type="button" class="btn btn-sm btn-default btn-table" ng-click="grid.appScope.vm.showModal(row)">' +
+          cellTemplate: '<button type="button" class="btn btn-sm btn-default btn-table" ' +
+                              'ng-click="grid.appScope.vm.showModal(row)">' +
                             '<i class="fa fa-pencil-square-o"></i></button>' +
                         '<a ui-sref="admin"><button type="button" class="btn btn-sm btn-primary btn-table">' +
                             '<i class="fa fa-info-circle"></i></button></a>' }
@@ -113,7 +114,12 @@
       }
     };
 
-    vm.commentModal = $modal({scope: $scope, templateUrl: 'app/modals/commentModal.html', show: false, title: 'Share your experience'});
+    vm.commentModal = $modal({
+      scope: $scope,
+      templateUrl: 'app/modals/commentModal.html',
+      show: false,
+      title: 'Share your experience'
+    });
     activate();
 
     vm.refreshSlider = function () {
