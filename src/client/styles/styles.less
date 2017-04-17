@@ -49,11 +49,11 @@ form * {
     font-family: "Segoe UI", Arial, Helvetica, sans-serif;
 }
 
-input, textarea {
-    background-image: none !important;
-    border: 1px solid #ccc !important;
-    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
-}
+//input, textarea {
+//    background-image: none !important;
+//    border: 1px solid #ccc !important;
+//    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+//}
 
 select {
     font-size: 13px !important;
@@ -2018,7 +2018,8 @@ tags-input .tags .input {
 
 tags-input.form-control {
   padding: 0;
-  border: 0
+  border: 0;
+  height:auto;
 }
 
 tags-input.form-control .host{
@@ -2055,4 +2056,16 @@ tags-input.form-control .host{
 
 .rzslider .rz-pointer {
   background: @color_tan;
+}
+
+tags-input .tags .tag-item {
+  background: @color_wine;
+  color: white;
+}
+
+
+@media (min-width: 768px) {
+  .modal-dialog {
+    width:800px;
+  }
 }
