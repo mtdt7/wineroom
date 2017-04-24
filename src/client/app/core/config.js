@@ -30,5 +30,4 @@
     exceptionHandlerProvider.configure(config.appErrorPrefix);
     routerHelperProvider.configure({ docTitle: config.appTitle + ': ' });
   }
-
 })();

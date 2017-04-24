@@ -1,0 +1,68 @@
+<section id="frontpage-view" class="">
+  <section class="matter">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 paddingBottom">
+          <!--<pre>{{vm | json}}</pre>-->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 paddingTop paddingBottom">
+          <div class="col-xs-10">
+            <h1><b>Available Bottles
+              <i class="fa fa-question-circle" data-animation="am-flip-x"
+                 bs-tooltip="{ title: 'This is a list of all the available bottles in your collection.
+                 Please use the search, sort, and filter options to find exactly what you are looking for.' }">
+              </i>
+            </b></h1>
+          </div>
+          <div class="col-xs-2">
+            <button class="btn btn-lg btn-default pull-right" ui-sref="wine({ id: 'new' })"><i class="fa fa-plus"></i> Add New Wine</button>
+          </div>
+        </div>
+        <div class="col-xs-12 paddingTop paddingBottom">
+          <div class="col-xs-2 text-right pull-right">
+            <button class="btn btn-info" ng-click="vm.showFilter()" style="width: 100%;">
+              <i class="fa fa-filter"></i> See Available Filters
+            </button>
+          </div>
+          <div class="col-xs-2 text-right pull-right">
+            <button class="btn btn-info btn-drop" data-placeholder="Sort By..." ng-model="vm.sortBy" style="width: 100%; text-align: left;" data-html="1" data-multiple="1" data-toggle="true"
+                    bs-options="options.value as options.label for options in vm.sortByOptions" bs-select>
+            </button>
+          </div>
+          <div class="col-xs-3 text-right pull-right">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for Wine or Vinyard..." aria-describedby="basic-addon1">
+              <span class="input-group-btn" id="basic-addon1">
+                <button class="btn btn-info" type="button"><i class="fa fa-search"></i> Search</button>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 paddingTop paddingBottom filterMenu am-fade" ng-show="vm.filters">
+          <div class="col-xs-3 paddingTop paddingBottom">
+            <toggle ng-model="vm.slider.enabled" ng-change="changed()" on="Enabled" off="Disabled"></toggle>
+            <rzslider
+              rz-slider-model="vm.slider.minValue" rz-slider-high="vm.slider.maxValue"
+              rz-slider-options="vm.slider.options"></rzslider>
+          </div>
+          <div class="col-xs-2 paddingTop paddingBottom">
+            <button class="btn btn-info btn-drop" data-placeholder="Color..." ng-model="vm.filterBy.color" style="width: 100%; text-align: left; margin-bottom: 10px;" data-html="1" data-multiple="1" data-toggle="true"
+                    bs-options="options.value as options.label for options in vm.colors" bs-select>
+            </button>
+            <button class="btn btn-info btn-drop" data-placeholder="Format..." ng-model="vm.filterBy.format" style="width: 100%; text-align: left;" data-html="1" data-multiple="1" data-toggle="true"
+                    bs-options="options.value as options.label for options in vm.formats" bs-select>
+            </button>
+          </div>
+          <div class="col-xs-2 paddingTop paddingBottom">
+
+          </div>
+        </div>
+        <div class="col-xs-12 paddingBottom">
+          <div ui-grid="vm.recentlyOpenedGridOptions" class="standard-grid"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>

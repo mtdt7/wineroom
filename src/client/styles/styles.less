@@ -8,9 +8,15 @@
 @color_tan : #C09f80;
 @color_lighttan: #e4d6c8;
 @color_darktan: #a1764f;
-@color_wine: #76323f;
+@color_wine: #852129;
 @color_charcoal: #565656;
 @color_grain: #D7CEC7;
+
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham/GOTHAM-LIGHT.TTF')  format('truetype');
+}
 
 * {
     /*-webkit-box-shadow: none !important;
@@ -20,8 +26,9 @@
     -webkit-text-shadow: none !important;
     -ms-text-shadow: none !important;
     text-shadow: none !important;*/
-    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
-    -webkit-font-smoothing: antialiased;
+    font-family: "Gotham", "Segoe UI", Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+
     /*font-weight: 400;*/
 }
 
@@ -85,7 +92,7 @@ body {
     line-height: 23px;
     color: #565656;
     background: #D7CEC7 !important;
-    padding-top: 45px;
+    padding-top: 85px;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -222,6 +229,10 @@ a.btn {
         background: @color_darktan !important;
     }
 
+    .btn-info:active, .btn-info.active, .open > .dropdown-toggle.btn-info{
+        background: #674c32 !important;
+    }
+
 .btn.btn-success {
     background: @color_success !important;
 }
@@ -247,13 +258,23 @@ a.btn {
     }
 
 .btn.btn-default {
-  background: @color_charcoal !important;
+  background: @color_charcoal;
   color: white;
 }
 
     .btn.btn-default:hover {
-      background: #2e2e2e !important;
+      background: #2e2e2e ;
     }
+
+.btn.btn-white {
+  background: white !important;
+  border: 1px solid #ccc !important;
+
+}
+
+  .btn.btn-white:hover {
+    background: lightgrey !important;
+  }
 /* Label colors */
 
 .label.label-success,
@@ -547,6 +568,7 @@ form {
 
 .navbar {
     background: #000;
+    min-height: 85px;
 }
 
     .navbar .container {
@@ -1306,10 +1328,32 @@ form {
 
 /*#endregion */
 
+.panel-primary {
+  border-color: @color_wine;
+}
 
+.panel-primary > .panel-heading {
+  background-color: @color_wine;
+  border-color: @color_wine;
+}
 
+.panel-info {
+  border-color: @color_tan;
+}
 
+.panel-info > .panel-heading {
+  background-color: @color_tan;
+  border-color: @color_tan;
+}
 
+.panel-default {
+  border-color: @color_charcoal;
+}
+
+.panel-default > .panel-heading {
+  background-color: @color_charcoal;
+  border-color: @color_charcoal;
+}
 
 
 
@@ -1334,7 +1378,7 @@ body {
 }
 
 .navbar-inverse {
-    background-color: #333;
+    background-color: @color_wine;
 }
 
 .sidebar-widget form {
@@ -1537,10 +1581,15 @@ small {
     margin: auto;
 }
 
+.navbar-brand > img {
+  display: inline;
+}
+
 .navbar .navbar-brand {
     /*background: url(../images/gg.png) no-repeat left top !important;*/
-    margin: 0 1em;
-    height: 45px;
+  margin-left:150px;
+  height: 85px;
+  padding:0;
 }
 
 .navbar .brand-title {
@@ -1548,8 +1597,22 @@ small {
     color: #FFFFFF;
 }
 
-.navbar-logo img {
-    height: 20px;
+.navbar-logo {
+  height: 80px;
+  padding-top:5px;
+}
+
+.navbar a {
+  color: white;
+  font-size:24px;
+}
+
+.navbar a:hover {
+  font-weight: bold;
+}
+
+.navbar-link {
+  line-height: 85px;
 }
 
 .today-datas li {
@@ -1982,6 +2045,19 @@ a {
 
 .ui-grid-header {
   text-align: center;
+  border: 0;
+}
+
+.ui-grid-header-cell {
+  border:0;
+}
+
+.ui-grid {
+  border: 0;
+}
+
+.ui-grid-cell {
+  border: 0;
 }
 
 .textCenter {
@@ -2009,6 +2085,14 @@ a {
 
 .rzslider .rz-pointer.rz-active:after {
   background: #ffffff;
+}
+
+.rzslider .rz-selection {
+  background: @color_tan;
+}
+
+.rzslider .rz-tick.rz-selected {
+  background: @color_wine;
 }
 
 tags-input .tags .input {
@@ -2068,4 +2152,85 @@ tags-input .tags .tag-item {
   .modal-dialog {
     width:800px;
   }
+}
+
+.btn-drop span.caret {
+  float: right;
+  margin-top: 8px;
+}
+
+.filterMenu {
+  background: white;
+  background-clip:content-box;
+  border-radius: 50px;
+}
+
+.datepicker.dropdown-menu {
+  width: 250px;
+  height: 255px;
+  padding-right: 4px;
+  padding-bottom: 0px;
+  button {
+    outline: none;
+    border: 0px;
+  }
+  tbody {
+    height: 180px;
+  }
+  tbody button {
+    padding: 6px;
+  }
+  &.datepicker-mode-1, &.datepicker-mode-2 {
+    tbody button {
+      height: 65px;
+    }
+  }
+  .btn.btn-default {
+    background: white;
+    color: black;
+  }
+
+  .btn.btn-default:hover {
+    background: lightgrey;
+  }
+}
+
+.timepicker.dropdown-menu {
+  padding: 0 4px;
+  button {
+    outline: none;
+    border: 0px;
+  }
+  tbody button {
+    padding: 6px;
+  }
+}
+
+.select.dropdown-menu {
+  max-height: 210px;
+  overflow: scroll;
+}
+
+navbar-brand-text {
+  color: white;
+}
+
+.frontpage.jumbotron {
+  background-image: url("../images/bottles.jpg");
+
+  height: 400px;
+  text-align: center;
+  color: white;
+  padding: 110px;
+  background-color: #763240;
+  background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url("../images/bottles.jpg");
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url("../images/bottles.jpg");
+  background-position: 0px 0px, 100% 50%;
+  background-size: auto, 110%;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+.ui-grid-cell-contents {
+  line-height: 32px;
 }

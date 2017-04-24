@@ -1,0 +1,201 @@
+<section id="frontpage-view" class="">
+  <section class="matter">
+    <div class="container">
+
+      <!--<div class="row">-->
+        <!--<pre>{{ vm.Tags | json }}</pre>-->
+      <!--</div>-->
+      <div class="row paddingTop">
+        <div class="col-xs-5 pull-right">
+          <button class="btn btn-primary btn-lg pull-right" type="button" ng-click="vm.save()">Submit</button>
+        </div>
+      </div>
+      <div class="row paddingTop">
+        <div class="col-xs-12">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+              </h3>
+            </div>
+            <div class="panel-body">
+              <div class="col-xs-12 paddingBottom">
+                <img src="images/basic_info_title.png" width="400px">
+              </div>
+              <div class="col-xs-2 text-right">
+                <img src="images/lines.png" width="150px" alt="http://placehold.it/150x150">
+              </div>
+              <div class="col-xs-10">
+                <div class="col-xs-12 paddingBottom paddingTop">
+                  <div class="input-group">
+                    <span class="input-group-btn" id="basic-addon1">
+                      <button class="btn btn-info" type="button" data-trigger="click" data-type="success"
+                              data-title="What vineyard is this wine from?" bs-tooltip>
+                        Vineyard
+                      </button>
+                    </span>
+                    <input type="text" ng-model="vm.wine.Vineyard" class="form-control" aria-describedby="basic-addon1"/>
+                  </div>
+                </div>
+                <div class="col-xs-6 paddingBottom">
+                  <div class="input-group">
+                <span class="input-group-btn" id="basic-addon2">
+                  <button class="btn btn-info" type="button" data-trigger="click" data-type="success"
+                          data-title="What type of grape is this wine made with?" bs-tooltip>
+                    Grape Type
+                  </button>
+                </span>
+                    <input type="text" ng-model="vm.wine.GrapeType" class="form-control" aria-describedby="basic-addon2"/>
+                  </div>
+                </div>
+                <div class="col-xs-6 paddingBottom">
+                  <div class="input-group">
+                <span class="input-group-btn" id="basic-addon3">
+                  <button class="btn btn-info" type="button" data-trigger="click" data-type="success"
+                          data-title="What year was this wine made?" bs-tooltip>
+                    Year
+                  </button>
+                </span>
+                    <input type="num" ng-model="vm.wine.Year" class="form-control" aria-describedby="basic-addon3"/>
+                  </div>
+                </div>
+                <div class="col-xs-6 paddingBottom">
+                  <div class="input-group">
+                <span class="input-group-btn" id="basic-addon4">
+                  <button class="btn btn-info" type="button" data-trigger="click" data-type="success"
+                          data-title="What region is this wine from?" bs-tooltip>
+                    Region
+                  </button>
+                </span>
+                    <button class="btn btn-white btn-drop form-control" ng-model="vm.wine.Region"
+                            style="width: 100%; text-align: left; margin-left: 0;"
+                            data-html="1" data-toggle="true"
+                            bs-options="options as options for options in vm.regions" bs-select>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-xs-6 paddingBottom">
+                  <div class="input-group">
+                <span class="input-group-btn" id="basic-addon5">
+                  <button class="btn btn-info" type="button" data-trigger="click" data-type="success"
+                          data-title="What color is this wine?" bs-tooltip>
+                    Color
+                  </button>
+                </span>
+                    <button class="btn btn-white btn-drop form-control" ng-model="vm.wine.Color" style="width: 100%;
+                  text-align: left; margin-left: 0;" data-html="1" data-toggle="true"
+                            bs-options="options as options for options in vm.colors" bs-select>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+              </h3>
+            </div>
+            <div class="panel-body">
+              <div class="col-xs-12 paddingBottom">
+                <img src="images/storage_info_title.png" width="500px">
+              </div>
+              <div class="col-xs-12 paddingBottom paddingTop">
+                <div class="input-group">
+                    <span class="input-group-btn" id="basic-addon6">
+                      <button class="btn btn-primary" type="button" data-trigger="click" data-type="success"
+                              data-title="Where is this wine stored?" bs-tooltip>
+                        Storage Location
+                      </button>
+                    </span>
+                  <input type="text" ng-model="vm.wine.Location" class="form-control" aria-describedby="basic-addon6"/>
+                </div>
+              </div>
+              <div class="col-xs-6 paddingBottom">
+                <div class="input-group">
+                    <span class="input-group-btn" id="basic-addon7">
+                      <button class="btn btn-primary" type="button" data-trigger="click" data-type="success"
+                              data-title="When does this wine's drinkable period begin?" bs-tooltip>
+                        Drinkable Start
+                      </button>
+                    </span>
+                  <input type="text" class="form-control" ng-model="vm.wine.DrinkableStart" name="date" bs-datepicker>
+                </div>
+              </div>
+              <div class="col-xs-6 paddingBottom">
+                <div class="input-group">
+                    <span class="input-group-btn" id="basic-addon8">
+                      <button class="btn btn-primary" type="button" data-trigger="click" data-type="success"
+                              data-title="When does this wine's drinkable period end?" bs-tooltip>
+                        Drinkable End
+                      </button>
+                    </span>
+                  <input type="text" class="form-control" ng-model="vm.wine.DrinkableEnd" name="date" bs-datepicker>
+                </div>
+              </div>
+              <div class="col-xs-12 paddingBottom">
+                <rzslider
+                  rz-slider-model="vm.wine.rating"
+                  rz-slider-options="vm.slider.options"></rzslider>
+              </div>
+              <div class="col-xs-12">
+                <div class="input-group">
+                <span class="input-group-btn" id="basic-addon9">
+                  <button class="btn btn-primary" type="button" data-trigger="click" data-type="success" data-title="What buzz words would you use to describe the wine?" bs-tooltip>
+                    <i class="fa fa-tag"></i>
+                  </button>
+                </span>
+                  <tags-input ng-model="vm.wine.Tags" class="form-control" aria-describedby="basic-addon9"></tags-input>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+              </h3>
+            </div>
+            <div class="panel-body">
+              <div class="col-xs-12 paddingBottom">
+                <img src="images/finacial_info_title.png" width="370px">
+              </div>
+              <div class="col-xs-12 paddingBottom paddingTop">
+                <div class="input-group">
+                    <span class="input-group-btn" id="basic-addon10">
+                      <button class="btn btn-default" type="button" data-trigger="click" data-type="success"
+                              data-title="How expensive was this wine?" bs-tooltip>
+                        Purchase Price
+                      </button>
+                    </span>
+                  <input type="number" ng-model="vm.wine.PurchasePrice" class="form-control" aria-describedby="basic-addon10"/>
+                </div>
+              </div>
+              <div class="col-xs-12 paddingBottom paddingTop">
+                <div class="input-group">
+                    <span class="input-group-btn" id="basic-addon11">
+                      <button class="btn btn-default" type="button" data-trigger="click" data-type="success"
+                              data-title="What expensive is this wine now?" bs-tooltip>
+                        Market Price
+                      </button>
+                    </span>
+                  <input type="number" ng-model="vm.wine.MarketPrice" class="form-control" aria-describedby="basic-addon11"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <button class="btn btn-primary btn-lg pull-right" type="button" ng-click="vm.save()">Submit</button>
+          <img class="pull-right" src="images/Logo_Color.png" width="500px" style="margin-right: 85px;">
+        </div>
+      </div>
+      </div>
+  </section>
+</section>

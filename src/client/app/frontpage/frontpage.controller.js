@@ -67,7 +67,8 @@
 
     vm.recentlyOpenedGridOptions = {
       data: vm.recentlyOpened,
-      rowHeight: 40,
+      rowHeight: 38,
+      enableColumnMenus: false,
       columnDefs: [
         { field: 'opened', displayName: 'Opened', width: '15%' },
         { field: 'wine', displayName: 'Wine, Producer', width: '*' },
@@ -83,7 +84,8 @@
     };
     vm.enteringGridOptions = {
       data: vm.recentlyOpened,
-      rowHeight: 40,
+      rowHeight: 38,
+      enableColumnMenus: false,
       columnDefs: [
         { field: 'wine', displayName: 'Wine, Producer', width: '*' },
         { field: 'year', displayName: 'Year', width: '20%' },
@@ -94,7 +96,8 @@
     };
     vm.leavingGridOptions = {
       data: vm.recentlyOpened,
-      rowHeight: 40,
+      rowHeight: 38,
+      enableColumnMenus: false,
       columnDefs: [
         { field: 'wine', displayName: 'Wine, Producer', width: '*' },
         { field: 'year', displayName: 'Year', width: '20%' },

@@ -3,7 +3,7 @@
 node_modules/
 bower_components/
 report/
-
+.DS_Store
 # other
 .tmp
 report/plato
